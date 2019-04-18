@@ -42,7 +42,7 @@
             disableNavWhenOutOfRange: true,
 
             multipleDates: false, // Boolean or Number
-            multipleDatesSeparator: ',',
+            multipleDatesSeparator: ' - ',
             range: false,
 
             todayButton: false,
@@ -53,8 +53,8 @@
 
             // navigation
             monthsField: 'monthsShort',
-            prevHtml: '<svg><path d="M 17,12 l -5,5 l 5,5"></path></svg>',
-            nextHtml: '<svg><path d="M 14,12 l 5,5 l -5,5"></path></svg>',
+            prevHtml: '<svg viewbox="0 0 32 32"><path d="M 17,12 l -5,5 l 5,5"></path></svg>',
+            nextHtml: '<svg viewbox="0 0 32 32"><path d="M 14,12 l 5,5 l -5,5"></path></svg>',
             navTitles: {
                 days: 'MM, <i>yyyy</i>',
                 months: 'yyyy',
