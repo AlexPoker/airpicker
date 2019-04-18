@@ -22,6 +22,11 @@ $('.my-datepicker').airpicker([options])
 
 ## Change log
 
+### v1.1.0.1
+* fixed the svg appearance issue
+* changed the default date range separator
+* various minor fixes
+
 ### v1.1.0
 * renamed the library so as to escape the compatibility issue with the Jquery UI datepicker
 * switched sizes from px to em in CSS
