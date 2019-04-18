@@ -9,16 +9,16 @@ var gulp = require('gulp'),
 
 module.exports = function () {
     var stream = gulp.src('src/sass/*.scss')
-        .pipe(concat('datepicker.scss'))
+        .pipe(concat('airpicker.scss'))
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss([autoprefixer]));
 
     stream.pipe(clone())
         .pipe(minify())
-        .pipe(rename('datepicker.min.css'))
+        .pipe(rename('airpicker.min.css'))
         .pipe(gulp.dest('dist/css'));
 
     stream.pipe(clone())
-        .pipe(rename('datepicker.css'))
+        .pipe(rename('airpicker.css'))
         .pipe(gulp.dest('dist/css'))
 };

@@ -1,4 +1,4 @@
-@import "datepicker-config";
+@import "airpicker-config";
 
 /* -------------------------------------------------
     Timepicker
@@ -6,7 +6,8 @@
 
 $rangeTrackHeight: 1px;
 $rangeTrackBg: #dedede;
-$rangeThumbSize: 12px;
+$rangeThumbSize: em(12, 14);
+$rangeThumbMargin: em(-6, 14);
 $rangeThumbBg: #dedede;
 
 @mixin trackSelector {
@@ -41,7 +42,7 @@ $rangeThumbBg: #dedede;
   box-sizing: border-box;
   height: $rangeThumbSize;
   width: $rangeThumbSize;
-  border-radius: 3px;
+  border-radius: em(3, 14);
   border: 1px solid $rangeTrackBg;
   background: #fff;
   cursor: pointer;
@@ -57,18 +58,19 @@ $rangeThumbBg: #dedede;
   background: transparent;
 }
 
-.datepicker--time {
-  border-top: 1px solid map_get($datepickerBorderColor, nav);
+.airpicker--time {
+  border-top: 1px solid map_get($airpickerBorderColor, nav);
   display: flex;
   align-items: center;
 
-  padding: $datepickerPadding;
+  padding: $airpickerPadding;
   position: relative;
 
   &.-am-pm- {
-    .datepicker--time-sliders {
-      flex: 0 1 138px;
-      max-width: 138px;
+    .airpicker--time-sliders {
+      flex: 0 1 auto;
+      width: em(138, 14);
+      max-width: em(138, 14);
     }
   }
 
@@ -77,48 +79,49 @@ $rangeThumbBg: #dedede;
   }
 }
 
-.datepicker--time-sliders {
-  flex: 0 1 153px;
-  margin-right: 10px;
-  max-width: 153px;
+.airpicker--time-sliders {
+  flex: 0 1 auto;
+  margin-right: em(10, 14);
+  width: em(153, 14);
+  max-width: em(153, 14);
 }
 
-.datepicker--time-label {
+.airpicker--time-label {
   display: none;
-  font-size: 12px;
+  font-size: em(12, 14);
 }
 
-.datepicker--time-current {
+.airpicker--time-current {
   display: flex;
   align-items: center;
   flex: 1;
-  font-size: 14px;
+  font-size: em(14, 14);
   text-align: center;
-  margin: 0 0 0 10px;
+  margin: 0 0 0 em(10, 14);
 }
 
-.datepicker--time-current-colon {
-  margin: 0 2px 3px;
+.airpicker--time-current-colon {
+  margin: 0 em(2, 14) em(3, 14);
   line-height: 1;
 }
 
-.datepicker--time-current-hours,
-.datepicker--time-current-minutes {
+.airpicker--time-current-hours,
+.airpicker--time-current-minutes {
   line-height: 1;
-  font-size: 19px;
+  font-size: em(19, 14);
   font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   position: relative;
   z-index: 1;
 
   &:after {
     content: '';
-    background: map_get($datepickerBG, hover);
-    border-radius: $datepickerBorderRadius;
+    background: map_get($airpickerBG, hover);
+    border-radius: $airpickerBorderRadius;
     position: absolute;
-    left: -2px;
-    top: -3px;
-    right: -2px;
-    bottom: -2px;
+    left: em(-2, 19);
+    top: em(-3, 19);
+    right: em(-2, 19);
+    bottom: em(-2, 19);
     z-index: -1;
     opacity: 0;
   }
@@ -130,24 +133,24 @@ $rangeThumbBg: #dedede;
   }
 }
 
-.datepicker--time-current-ampm {
+.airpicker--time-current-ampm {
   text-transform: uppercase;
   align-self: flex-end;
-  color: map_get($datepickerTextColor, navArrows);
-  margin-left: 6px;
-  font-size: 11px;
+  color: map_get($airpickerTextColor, navArrows);
+  margin-left: em(6, 11);
+  font-size: em(11, 14);
   margin-bottom: 1px;
 }
 
-.datepicker--time-row {
+.airpicker--time-row {
   display: flex;
   align-items: center;
-  font-size: 11px;
-  height: 17px;
+  font-size: em(11, 14);
+  height: em(17, 11);
   background: linear-gradient(to right,$rangeTrackBg, $rangeTrackBg) left 50%/100% $rangeTrackHeight no-repeat;
 
   &:first-child {
-    margin-bottom: 4px;
+    margin-bottom: em(4, 11);
   }
 
   input[type='range'] {
@@ -177,8 +180,8 @@ $rangeThumbBg: #dedede;
       outline: none;
 
       @include thumbSelector() {
-        background: map_get($datepickerBG, selected);
-        border-color: map_get($datepickerBG, selected);
+        background: map_get($airpickerBG, selected);
+        border-color: map_get($airpickerBG, selected);
       }
     }
 
@@ -190,7 +193,7 @@ $rangeThumbBg: #dedede;
     }
 
     &::-webkit-slider-thumb {
-      margin-top: -$rangeThumbSize/2;
+      margin-top: $rangeThumbMargin;
     }
 
     //  Track
@@ -213,17 +216,17 @@ $rangeThumbBg: #dedede;
     }
   }
   span {
-    padding: 0 12px;
+    padding: 0 em(12, 11);
   }
 }
 
-.datepicker--time-icon {
-  color: map_get($datepickerTextColor, navArrows);
+.airpicker--time-icon {
+  color: map_get($airpickerTextColor, navArrows);
   border: 1px solid;
   border-radius: 50%;
-  font-size: 16px;
+  font-size: em(16, 14);
   position: relative;
-  margin: 0 5px -1px 0;
+  margin: 0 em(5) -1px 0;
   width: 1em;
   height: 1em;
 

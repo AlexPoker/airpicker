@@ -1,36 +1,36 @@
-@import "datepicker-config";
+@import "airpicker-config";
 
 /* -------------------------------------------------
     Navigation
    ------------------------------------------------- */
 
-.datepicker--nav {
+.airpicker--nav {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid map_get($datepickerBorderColor, nav);
-  min-height: $datepickerNavigationHeight;
-  padding: $datepickerPadding;
+  border-bottom: 1px solid map_get($airpickerBorderColor, nav);
+  min-height: $airpickerNavigationHeight;
+  padding: $airpickerPadding;
 
   .-only-timepicker- & {
     display: none;
   }
 }
 
-.datepicker--nav-title,
-.datepicker--nav-action {
+.airpicker--nav-title,
+.airpicker--nav-action {
   display: flex;
   cursor: pointer;
   align-items: center;
   justify-content: center;
 }
 
-.datepicker--nav-action {
-  width: $datepickerDayCellSize;
-  border-radius: $datepickerBorderRadius;
+.airpicker--nav-action {
+  width: $airpickerDayCellSize;
+  border-radius: $airpickerBorderRadius;
   user-select: none;
 
   &:hover {
-    background: map_get($datepickerBG, hover);
+    background: map_get($airpickerBG, hover);
   }
 
   &.-disabled- {
@@ -38,29 +38,29 @@
   }
 
   svg {
-    width: 32px;
-    height: 32px;
+    width: em(32, 14);
+    height: em(32, 14);
   }
 
   path {
     fill: none;
-    stroke: map_get($datepickerTextColor, navArrows);
-    stroke-width: 2px;
+    stroke: map_get($airpickerTextColor, navArrows);
+    stroke-width: em(2, 14);
   }
 }
 
-.datepicker--nav-title {
-  border-radius: $datepickerBorderRadius;
-  padding: 0 8px;
+.airpicker--nav-title {
+  border-radius: $airpickerBorderRadius;
+  padding: 0 em(8, 14);
 
   i {
     font-style: normal;
-    color: map_get($datepickerTextColor, navArrows);
-    margin-left: 5px;
+    color: map_get($airpickerTextColor, navArrows);
+    margin-left: em(5, 14);
   }
 
   &:hover {
-    background: map_get($datepickerBG, hover);
+    background: map_get($airpickerBG, hover);
   }
 
   &.-disabled- {
@@ -72,24 +72,24 @@
 //  Buttons
 // -------------------------------------------------
 
-.datepicker--buttons {
+.airpicker--buttons {
   display: flex;
-  padding: $datepickerPadding;
-  border-top: 1px solid map_get($datepickerBorderColor, nav);
+  padding: $airpickerPadding;
+  border-top: 1px solid map_get($airpickerBorderColor, nav);
 }
 
-.datepicker--button {
-  color: map_get($datepickerTextColor, currentDate);
+.airpicker--button {
+  color: map_get($airpickerTextColor, currentDate);
   cursor: pointer;
-  border-radius: $datepickerBorderRadius;
+  border-radius: $airpickerBorderRadius;
   flex: 1;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  height: 32px;
+  height: em(32, 14);
 
   &:hover {
-    color: map_get($datepickerTextColor, common);
-    background: map_get($datepickerBG, hover);
+    color: map_get($airpickerTextColor, common);
+    background: map_get($airpickerBG, hover);
   }
 }

@@ -12,7 +12,7 @@ module.exports = function () {
         'src/js/navigation.js',
         'src/js/timepicker.js'
     ])
-        .pipe(concat('datepicker.js'))
+        .pipe(concat('airpicker.js'))
         .pipe(wrap(';(function (window, $, undefined) { <%=contents%> })(window, jQuery);'));
 
     stream.pipe(clone())
@@ -20,7 +20,7 @@ module.exports = function () {
 
     stream.pipe(clone())
         .pipe(uglify())
-        .pipe(rename('datepicker.min.js'))
+        .pipe(rename('airpicker.min.js'))
         .pipe(gulp.dest('dist/js'))
 
 };
